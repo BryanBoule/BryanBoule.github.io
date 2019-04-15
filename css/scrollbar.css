@@ -16,7 +16,14 @@
 
 /* The progress bar (scroll indicator) */
 .progress-bar {
-  height: 5px;
-  background: #6288b1;
+  height: 7px;
+  background: #4c4c4c;
   width: 0%;
+}
+
+.contact {
+    padding: 15px 10vw 90px 10vw;
+    background-color: #F5F5F5;
+    text-align: center;
+    align-items: center;
 }
