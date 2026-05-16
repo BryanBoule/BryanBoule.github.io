@@ -1,27 +1,53 @@
-# Women in Tennis — Data Storytelling
+# bryanboule.pro
 
-Ce dépôt contient une page web statique qui raconte l'évolution du tennis féminin, avec un focus particulier sur la carrière de Serena Williams. Le site combine des explications pédagogiques et des visualisations interactives (Tableau) pour illustrer des tendances comme la diffusion mondiale du tennis, l'impact des événements de carrière et les caractéristiques d'une championne.
+Portfolio personnel — Next.js 14 (App Router) + TypeScript + Tailwind, exporté en statique sur GitHub Pages.
 
-## Aperçu du contenu
-- **Contexte historique** : premiers pas des femmes dans le tennis et comparaison des récompenses d'hier et d'aujourd'hui.
-- **Données mondiales** : carte des joueuses classées WTA au XXIᵉ siècle.
-- **Focus Serena Williams** : évolution des classements, points WTA et statistiques de jeu.
-- **Équipe & sources** : présentation des auteurs et des ressources de données.
+Site en ligne : **[bryanboule.pro](https://bryanboule.pro)**
 
-## Structure du projet
+## Particularités
+
+- Export statique (`output: 'export'`) — pas de serveur, hébergement GitHub Pages.
+- Switch FR / EN côté client (contexte React, pas de routing).
+- Mate-en-1 quotidien qui débloque l'email de contact (rotation par jour de l'année).
+- Theming via une seule variable CSS `--accent` (triplet RGB) consommée par Tailwind.
+- SEO complet : metadata enrichies, JSON-LD Person schema, sitemap.xml généré, robots.txt.
+- Google Analytics 4 via `@next/third-parties`.
+
+## Commandes
+
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # build de prod → out/
+npm run lint
 ```
-.
-├── index.html
-├── css/
-│   ├── button.css
-│   ├── scrollbar.css
-│   └── styles.css
-├── img/
-└── js/
-```
 
-## Lancer le site localement
-Ouvrez simplement `index.html` dans votre navigateur préféré (double-clic ou via un serveur local si besoin).
+## Personnalisation
 
-## Crédits
-Les visualisations sont intégrées depuis Tableau Public et les données proviennent du dataset Kaggle « WTA matches and rankings ».
+- **Contenu** : tout est dans [lib/cv-data.ts](lib/cv-data.ts). Chaque chaîne est un objet `{ fr, en }`. Ne pas écrire de texte en dur dans les composants.
+- **Couleur d'accent** : variable `--accent` dans [app/globals.css](app/globals.css).
+- **Photo** : [public/photo.jpg](public/photo.jpg).
+- **Puzzles d'échecs** : tableau `PUZZLES` dans [components/ChessPuzzle.tsx](components/ChessPuzzle.tsx) — chaque entrée définit la position, le coup gagnant et un indice bilingue.
+
+## Déploiement
+
+Push sur `master` → le workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) build avec `GITHUB_PAGES=true` puis publie via `actions/deploy-pages`.
+
+`next.config.mjs` calcule le `basePath` à partir du nom du repo, sauf si le repo termine par `.github.io` (cas de ce projet → `basePath` vide, compatible avec le domaine personnalisé).
+
+Custom domain géré via [public/CNAME](public/CNAME). DNS chez OVH :
+- 4 records `A` sur `@` → `185.199.108-111.153`
+- 4 records `AAAA` sur `@` → `2606:50c0:8000-8003::153`
+- 1 record `CNAME` sur `www` → `bryanboule.github.io.`
+
+## Stack
+
+| Couche       | Choix                         |
+|--------------|-------------------------------|
+| Framework    | Next.js 14, App Router        |
+| Langage      | TypeScript                    |
+| Styling      | Tailwind CSS                  |
+| Polices      | Geist + Geist Mono            |
+| Hébergement  | GitHub Pages (export statique)|
+| Analytics    | Google Analytics 4            |
+| CI/CD        | GitHub Actions                |
