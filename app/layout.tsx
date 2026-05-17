@@ -6,7 +6,7 @@ const SITE_URL = 'https://bryanboule.pro';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'Bryan Boulé — Co-fondateur & CTO @ HUVY',
+  title: 'Bryan Boulé - Co-fondateur & CTO @ HUVY',
   description:
     "Bryan Boulé, co-fondateur & CTO de HUVY. Je construis une IA médicale CE Class IIb qui détecte le mélanome avant qu'il ne soit trop tard. Vision par ordinateur, SaMD, deep learning médical.",
   keywords: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
   },
   openGraph: {
-    title: 'Bryan Boulé — Co-fondateur & CTO @ HUVY',
+    title: 'Bryan Boulé - Co-fondateur & CTO @ HUVY',
     description:
       "Co-fondateur & CTO de HUVY. IA médicale CE Class IIb pour la détection du mélanome. Vision par ordinateur, SaMD, deep learning.",
     url: SITE_URL,
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bryan Boulé — Co-fondateur & CTO @ HUVY',
+    title: 'Bryan Boulé - Co-fondateur & CTO @ HUVY',
     description: 'IA médicale CE Class IIb pour la détection du mélanome.',
   },
 };

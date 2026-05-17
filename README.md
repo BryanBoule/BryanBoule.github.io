@@ -1,12 +1,12 @@
 # bryanboule.pro
 
-Portfolio personnel — Next.js 14 (App Router) + TypeScript + Tailwind, exporté en statique sur GitHub Pages.
+Portfolio personnel - Next.js 14 (App Router) + TypeScript + Tailwind, exporté en statique sur GitHub Pages.
 
 Site en ligne : **[bryanboule.pro](https://bryanboule.pro)**
 
 ## Particularités
 
-- Export statique (`output: 'export'`) — pas de serveur, hébergement GitHub Pages.
+- Export statique (`output: 'export'`) - pas de serveur, hébergement GitHub Pages.
 - Switch FR / EN côté client (contexte React, pas de routing).
 - Mate-en-1 quotidien qui débloque l'email de contact (rotation par jour de l'année).
 - Theming via une seule variable CSS `--accent` (triplet RGB) consommée par Tailwind.
@@ -27,7 +27,7 @@ npm run lint
 - **Contenu** : tout est dans [lib/cv-data.ts](lib/cv-data.ts). Chaque chaîne est un objet `{ fr, en }`. Ne pas écrire de texte en dur dans les composants.
 - **Couleur d'accent** : variable `--accent` dans [app/globals.css](app/globals.css).
 - **Photo** : [public/photo.jpg](public/photo.jpg).
-- **Puzzles d'échecs** : tableau `PUZZLES` dans [components/ChessPuzzle.tsx](components/ChessPuzzle.tsx) — chaque entrée définit la position, le coup gagnant et un indice bilingue.
+- **Puzzles d'échecs** : tableau `PUZZLES` dans [components/ChessPuzzle.tsx](components/ChessPuzzle.tsx) - chaque entrée définit la position, le coup gagnant et un indice bilingue.
 
 ## Déploiement
 

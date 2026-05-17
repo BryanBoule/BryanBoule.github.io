@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useLang } from '@/lib/i18n';
 import { CV } from '@/lib/cv-data';
 
-// Daily chess puzzle — mate-in-1.
+// Daily chess puzzle - mate-in-1.
 // Pieces: K/Q/R/B/N/P uppercase = white, lowercase = black, '.' = empty.
 
 interface Puzzle {
@@ -32,7 +32,7 @@ const PUZZLES: Puzzle[] = [
   },
   {
     id: 'rook-roll',
-    board: ['.....rk.', '.....pp.', '........', '........', '........', '.......R', '......PP', '.......K'],
+    board: ['.....rk.', '.....pp.', '........', '........', '........', '.......R', '......PR', '.......K'],
     solution: 'h3h8',
     hint: { fr: 'Le couloir-h est ouvert.', en: 'The h-file is open.' },
     san: 'Rh8#',
@@ -60,7 +60,7 @@ export default function ChessPuzzle({ onSolve }: { onSolve?: () => void }) {
   const { lang } = useLang();
   const ui = CV.ui;
 
-  // Deterministic on first render — recompute once on the client side.
+  // Deterministic on first render - recompute once on the client side.
   const [puzzle, setPuzzle] = useState<Puzzle>(PUZZLES[0]);
   useEffect(() => setPuzzle(todaysPuzzle()), []);
 
@@ -209,7 +209,7 @@ export default function ChessPuzzle({ onSolve }: { onSolve?: () => void }) {
         )}
         {status === 'solved' && (
           <span className="text-[13px] text-accent font-mono font-semibold">
-            ✓ {puzzle.san} — {ui.chess_solved[lang]}
+            ✓ {puzzle.san} - {ui.chess_solved[lang]}
           </span>
         )}
         <button

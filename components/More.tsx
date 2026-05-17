@@ -14,8 +14,8 @@ export default function More() {
         title="more"
         sub={
           lang === 'fr'
-            ? '// formation, brevets, langues'
-            : '// education, patents, languages'
+            ? '// formation, distinctions, langues'
+            : '// education, honors, languages'
         }
       />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

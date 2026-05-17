@@ -53,8 +53,8 @@ export default function Contact() {
             </a>
             <div className="mt-8 text-[11px] text-ink-600 border-t border-ink-850 pt-4 leading-relaxed">
               {lang === 'fr'
-                ? "// L'idée : un visiteur qui sait jouer 1 coup de mat mérite que je réponde."
-                : '// The idea: a visitor who can find a mate-in-1 deserves a reply.'}
+                ? "// un petit problème d'échecs, ça ne casse pas trois pattes à un canard"
+                : "// just a tiny chess puzzle, nothing too fancy"}
             </div>
           </div>
         </Reveal>

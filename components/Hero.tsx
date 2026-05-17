@@ -6,12 +6,6 @@ import { useLang } from '@/lib/i18n';
 import LangSwitch from './LangSwitch';
 import Clock from './Clock';
 
-const ASCII_ART = `╔══════════════════════════════════════════╗
-║  BRYAN BOULÉ · BB · 1996                 ║
-║  Co-founder & CTO @ HUVY · Paris, FR     ║
-║  > medical-ai > computer-vision > samd   ║
-╚══════════════════════════════════════════╝`;
-
 function useTypewriter(lines: string[], speed = 24, startDelay = 400) {
   const [out, setOut] = useState<string[]>(['']);
   const [done, setDone] = useState(false);
@@ -87,18 +81,12 @@ export default function Hero() {
           <span>
             fr-FR · <Clock />
           </span>
-          <span className="hidden md:inline">load: 0.42, 0.18, 0.09</span>
         </div>
         <div className="flex gap-4 items-center">
           <span className="hidden md:inline">v.01 / Terminal</span>
           <LangSwitch />
         </div>
       </div>
-
-      {/* ASCII signature */}
-      <pre className="relative z-10 mb-8 font-mono text-[9px] leading-tight text-ink-800 select-none whitespace-pre inline-block">
-        {ASCII_ART}
-      </pre>
 
       {/* Terminal block */}
       <div className="relative z-10 max-w-[920px] mb-16 border border-ink-850 bg-ink-950/60 backdrop-blur-md px-12 py-10">

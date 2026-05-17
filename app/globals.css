@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  /* Accent (RGB triplet — change here to retheme the whole site). */
+  /* Accent (RGB triplet - change here to retheme the whole site). */
   /* Orange (current pick) */
   --accent: 249 115 22;
   /* Alt picks: */
@@ -38,7 +38,7 @@ button:focus-visible, a:focus-visible {
 /* Geist Mono fallback letter-spacing tightening matches the prototype. */
 .font-mono { font-feature-settings: 'ss01', 'cv11'; }
 
-/* Reveal animation — applied by IntersectionObserver in <Reveal>. */
+/* Reveal animation - applied by IntersectionObserver in <Reveal>. */
 .reveal-init {
   opacity: 0;
   transform: translateY(24px);
@@ -49,7 +49,7 @@ button:focus-visible, a:focus-visible {
   transform: translateY(0);
 }
 
-/* Animated grid background — pulled into a class so we can compose with mask. */
+/* Animated grid background - pulled into a class so we can compose with mask. */
 .bg-grid {
   background-color: #050505;
   background-image:

@@ -13,5 +13,5 @@ export default function Clock() {
     return () => clearInterval(id);
   }, []);
   // SSR-safe: render an empty span until hydration.
-  return <span suppressHydrationWarning>{str || '— : — : —'}</span>;
+  return <span suppressHydrationWarning>{str || '- : - : -'}</span>;
 }
